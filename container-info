@@ -1,0 +1,3 @@
+
+REPOSITORY=eoepca/django-portal
+TAG=`date -u +%Y.%m.%d.%H.%M`
