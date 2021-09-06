@@ -37,6 +37,10 @@
     {% csrf_token %}
     <input type="submit" value="Logout" class='button'>
   </form>
+  <a href="https://resource-catalogue.{{ user_prefix }}-{{ user.username }}.{{ hostname }}" class='button'>Resource Catalogue</a>
+  <a href="https://data-access.{{ user_prefix }}-{{ user.username }}.{{ hostname }}" class='button'>Workspace</a>
+  <a href="https://ades-pepapi.test.{{ hostname }}" class='button'>Ades</a>
+
 {% else %}
     <a href="{% url 'oidc_authentication_init' %}" class='button'>Login</a>
 {% endif %}

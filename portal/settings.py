@@ -149,3 +149,7 @@ OIDC_STORE_ID_TOKEN = True
 
 TOKEN_ID_COOKIE = os.environ.get('TOKEN_ID_COOKIE',"auth_user_id")
 OIDC_RP_SCOPES = "openid email user_name uma_protection permission"
+
+
+USER_PREFIX = os.environ.get('USER_PREFIX','user-prefix')
+HOSTNAME = os.environ.get('HOSTNAME','localhost')
