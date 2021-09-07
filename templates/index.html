@@ -38,7 +38,8 @@
     <input type="submit" value="Logout" class='button'>
   </form>
   <a href="https://resource-catalogue.{{ user_prefix }}-{{ user.username }}.{{ hostname }}" class='button'>Resource Catalogue</a>
-  <a href="https://data-access.{{ user_prefix }}-{{ user.username }}.{{ hostname }}" class='button'>Workspace</a>
+  <a href="https://data-access.{{ user_prefix }}-{{ user.username }}.{{ hostname }}" class='button'>Data Access</a>
+  <a href="https://workspace-api.test.{{ hostname }}/workspaces/{{ user_prefix }}-{{ user.username }}" class='button'>Workspace</a>
   <a href="https://ades-pepapi.test.{{ hostname }}" class='button'>Ades</a>
 
 {% else %}
