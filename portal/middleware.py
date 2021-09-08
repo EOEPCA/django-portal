@@ -1,4 +1,4 @@
-from .settings import TOKEN_ID_COOKIE
+from .settings import TOKEN_ID_COOKIE, SESSION_COOKIE_DOMAIN
 from django.utils.deprecation import MiddlewareMixin
 from mozilla_django_oidc.auth import OIDCAuthenticationBackend
 
@@ -13,7 +13,7 @@ class TokenCookieMiddleWare(MiddlewareMixin):
         #if user and no cookie, set cookie
 
         if request.user.is_authenticated and not request.COOKIES.get(TOKEN_ID_COOKIE):
-            response.set_cookie(TOKEN_ID_COOKIE, request.session['oidc_id_token'])
+            response.set_cookie(TOKEN_ID_COOKIE, request.session['oidc_id_token'], domain=SESSION_COOKIE_DOMAIN)
 
         elif not request.user.is_authenticated and request.COOKIES.get(TOKEN_ID_COOKIE):
             #else if if no user and cookie remove user cookie, logout

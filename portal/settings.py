@@ -153,3 +153,4 @@ OIDC_RP_SCOPES = "openid email user_name uma_protection permission"
 
 USER_PREFIX = os.environ.get('USER_PREFIX','user-prefix')
 HOSTNAME = os.environ.get('HOSTNAME','localhost')
+SESSION_COOKIE_DOMAIN = '.' + str(HOSTNAME)
