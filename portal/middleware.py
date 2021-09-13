@@ -11,13 +11,13 @@ class TokenCookieMiddleWare(MiddlewareMixin):
 
     def process_response(self, request, response):
         #if user and no cookie, set cookie
-
         if request.user.is_authenticated and not request.COOKIES.get(TOKEN_ID_COOKIE):
             response.set_cookie(TOKEN_ID_COOKIE, request.session['oidc_id_token'], domain=SESSION_COOKIE_DOMAIN)
 
         elif not request.user.is_authenticated and request.COOKIES.get(TOKEN_ID_COOKIE):
+            print('Remove cookie')
             #else if if no user and cookie remove user cookie, logout
-            response.delete_cookie(TOKEN_ID_COOKIE)
+            response.delete_cookie(TOKEN_ID_COOKIE, domain=SESSION_COOKIE_DOMAIN)
         return response
 
 
