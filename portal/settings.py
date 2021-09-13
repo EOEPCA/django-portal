@@ -139,16 +139,16 @@ OIDC_RP_CLIENT_SECRET = os.environ.get("OIDC_RP_CLIENT_SECRET",'client_secret')
 OIDC_OP_AUTHORIZATION_ENDPOINT = os.environ.get("OIDC_OP_AUTHORIZATION_ENDPOINT","https://aai.coih.org/oxauth/restv1/authorize")
 OIDC_OP_TOKEN_ENDPOINT = os.environ.get("OIDC_OP_TOKEN_ENDPOINT","https://aai.coih.org/oxauth/restv1/token")
 OIDC_OP_USER_ENDPOINT = os.environ.get("OIDC_OP_USER_ENDPOINT","https://aai.coih.org/oxauth/restv1/userinfo")
-OIDC_TOKEN_USE_BASIC_AUTH = os.environ.get("OIDC_TOKEN_USE_BASIC_AUTH", True)
+#OIDC_TOKEN_USE_BASIC_AUTH = os.environ.get("OIDC_TOKEN_USE_BASIC_AUTH", True)
 OIDC_RP_SIGN_ALGO = os.environ.get('OIDC_RP_SIGN_ALGO','RS256')
 OIDC_OP_JWKS_ENDPOINT = os.environ.get("OIDC_OP_JWKS_ENDPOINT","https://aai.coih.org/oxauth/restv1/jwks")
-
+OIDC_USE_NONCE = False
 #OIDC_CREATE_USER = False
 OIDC_STORE_ACCESS_TOKEN = True
 OIDC_STORE_ID_TOKEN = True
 
 TOKEN_ID_COOKIE = os.environ.get('TOKEN_ID_COOKIE',"auth_user_id")
-OIDC_RP_SCOPES = "openid email user_name uma_protection permission"
+OIDC_RP_SCOPES = "openid email user_name"
 
 
 USER_PREFIX = os.environ.get('USER_PREFIX','user-prefix')
