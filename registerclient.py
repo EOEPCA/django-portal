@@ -3,6 +3,7 @@ from WellKnownHandler import TYPE_OIDC, KEY_OIDC_SUPPORTED_AUTH_METHODS_TOKEN_EN
 from jwkest.jwk import RSAKey, import_rsa_key
 import base64
 import sys
+import secrets
 
 class CustomEOEPCA_SCIM(EOEPCA_Scim):
     def clientPayloadCreation(self, clientName, grantTypes, redirectURIs, logoutURI, responseTypes, scopes, sectorIdentifier, token_endpoint_auth_method, useJWT=0):
@@ -48,7 +49,7 @@ def main(hostname, sector):
         scopes = ['openid',  'email', 'user_name ','uma_protection', 'permission'],
         token_endpoint_auth_method = ENDPOINT_AUTH_CLIENT_POST,
         sectorIdentifier='https://test.{hostname}/oxauth/sectoridentifier/{sector}'.format(hostname=hostname, sector=sector))
-    django_secret = base64.b64encode("test1234".encode('utf-8')).decode('utf-8')
+    django_secret = base64.b64encode(secrets.token_urlsafe().encode('utf-8')).decode('utf-8')
     client_id= base64.b64encode(client["client_id"].encode('utf-8')).decode('utf-8')
     client_secret= base64.b64encode(client["client_secret"].encode('utf-8')).decode('utf-8')
 
