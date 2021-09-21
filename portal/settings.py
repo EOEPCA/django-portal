@@ -154,3 +154,10 @@ OIDC_RP_SCOPES = "openid email user_name"
 USER_PREFIX = os.environ.get('USER_PREFIX','user-prefix')
 HOSTNAME = os.environ.get('HOSTNAME','localhost')
 SESSION_COOKIE_DOMAIN = '.' + str(HOSTNAME)
+
+def provider_logout(request):
+
+    redirect_url = 'https://test.' + str(HOSTNAME) + '/oxauth/restv1/end_session?post_logout_redirect_uri=https://portal.' + str(HOSTNAME)
+    return redirect_url
+
+OIDC_OP_LOGOUT_URL_METHOD='portal.settings.provider_logout'

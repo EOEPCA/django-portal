@@ -44,7 +44,7 @@ def main(hostname, sector):
         "Django-portal",
         grantTypes = ["client_credentials", "password", "urn:ietf:params:oauth:grant-type:uma-ticket"],
         redirectURIs = ["https://portal.{hostname}/oidc/callback/".format(hostname=hostname)],
-        logoutURI = "",
+        logoutURI = "https://portal.{hostname}".format(hostname=hostname),
         responseTypes = ["code","token","id_token"],
         scopes = ['openid',  'email', 'user_name ','uma_protection', 'permission'],
         token_endpoint_auth_method = ENDPOINT_AUTH_CLIENT_POST,
