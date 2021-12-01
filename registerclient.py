@@ -2,9 +2,10 @@ from eoepca_scim import EOEPCA_Scim, ENDPOINT_AUTH_CLIENT_POST
 import base64
 import sys
 import secrets
+import os
 
-authHost = 'test'
-portalHost = 'portal'
+authHost = os.getenv('authHost','test')
+portalHost = os.getenv('portalHost','portal')
 
 def main(hostname, sector):
     print(f"Registering new client in : {hostname}")
