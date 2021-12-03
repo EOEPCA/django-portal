@@ -4,7 +4,7 @@ import sys
 import secrets
 import os
 
-authHost = os.getenv('authHost','test')
+authHost = os.getenv('authHost','auth')
 portalHost = os.getenv('portalHost','portal')
 
 def main(hostname, sector):
