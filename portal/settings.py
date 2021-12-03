@@ -156,6 +156,7 @@ HOSTNAME = os.environ.get('HOSTNAME','localhost')
 SESSION_COOKIE_DOMAIN = '.' + str(HOSTNAME)
 AUTHHOST = os.environ.get('AUTHHOST','test')
 PORTALHOST = os.environ.get('PORTALHOST','portal')
+OIDC_VERIFY_SSL =os.environ.get("OIDC_VERIFY_SSL", True)
 
 def provider_logout(request):
 
