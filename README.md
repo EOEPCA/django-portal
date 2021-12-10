@@ -4,7 +4,7 @@ For this portal to connect with the login service you need to create a client an
 Leave the **Clients** blank
 - Copy the **id** of this new sector identifier
 - Execute the script registerclient.sh
-You can set up the environment variables **portalHost** (default=portal) and **authHost** (default=test) before executing the script.
+You can set up the environment variables **portalHost** (default=portal) and **authHost** (default=auth) before executing the script.
 You will need two arguments: The **domain** and the **sector identifier id**
 like this: ***./registerclient.sh {domain} {sectorIdentifierID}***
 
