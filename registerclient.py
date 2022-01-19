@@ -18,6 +18,7 @@ def main(hostname, sector):
         responseTypes = ["code","token","id_token"],
         subject_type = 'public',
         scopes = ['openid',  'email', 'user_name ','uma_protection', 'permission', 'is_operator'],
+        access_token_as_jwt = True,
         token_endpoint_auth_method = ENDPOINT_AUTH_CLIENT_POST,
         sectorIdentifier=f'https://{authHost}.{hostname}/oxauth/sectoridentifier/{sector}')
     django_secret = base64.b64encode(secrets.token_urlsafe().encode('utf-8')).decode('utf-8')
