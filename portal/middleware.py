@@ -12,7 +12,8 @@ class TokenCookieMiddleWare(MiddlewareMixin):
     def process_response(self, request, response):
         #if user and no cookie, set cookie
         if request.user.is_authenticated and not request.COOKIES.get(TOKEN_ID_COOKIE):
-            response.set_cookie(TOKEN_ID_COOKIE, request.session['oidc_id_token'], domain=SESSION_COOKIE_DOMAIN)
+            response.set_cookie(TOKEN_ID_COOKIE, request.session['oidc_id_token'], domain=SESSION_COOKIE_DOMAIN,
+            secure=True, httponly=True, samesite="Strict")
 
         elif not request.user.is_authenticated and request.COOKIES.get(TOKEN_ID_COOKIE):
             print('Remove cookie')
