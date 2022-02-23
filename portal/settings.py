@@ -154,7 +154,7 @@ OIDC_RP_SCOPES = "openid email user_name is_operator"
 USER_PREFIX = os.environ.get('USER_PREFIX','user-prefix')
 HOSTNAME = os.environ.get('HOSTNAME','localhost')
 SESSION_COOKIE_DOMAIN = '.' + str(HOSTNAME)
-AUTHHOST = os.environ.get('AUTHHOST','test')
+AUTHHOST = os.environ.get('AUTHHOST','auth')
 PORTALHOST = os.environ.get('PORTALHOST','portal')
 # OIDC_VERIFY_SSL - assume True unless False is explicitly specified
 OIDC_VERIFY_SSL = not os.environ.get("OIDC_VERIFY_SSL", "True").lower() in ("false", "0", "f")

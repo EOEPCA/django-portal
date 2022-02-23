@@ -37,11 +37,13 @@
     {% csrf_token %}
     <input type="submit" value="Logout" class='button'>
   </form>
+  <a href="https://{{ login_prefix }}.{{ hostname }}" class='button'>Login Service</a>
+  <a href="https://{{ login_prefix }}.{{ hostname }}/web_ui" class='button'>User Profile</a>
+  <a href="https://ades.{{ hostname }}/{{ user.username }}/wps3/processes" class='button'>Ades</a>  
   <a href="https://resource-catalogue.{{ hostname }}" class='button'>System Resource Catalogue</a>
-  <a href="https://resource-catalogue.{{ user_prefix }}-{{ user.username }}.{{ hostname }}" class='button'>Resource Catalogue</a>
-  <a href="https://data-access.{{ user_prefix }}-{{ user.username }}.{{ hostname }}" class='button'>Data Access</a>
-  <a href="https://workspace-api.{{ hostname }}" class='button'>Workspace</a>
-  <a href="https://ades.{{ hostname }}" class='button'>Ades</a>
+  <a href="https://data-access.{{ hostname }}/" class='button'>System Data Access</a>
+  <a href="https://workspace-api.{{ hostname }}/docs#" class='button'>Workspace</a>
+  <a href="https://harbor.kube.guide.eoepca.org/" class='button'>Container Registry</a>
   <a href="https://dummy-service.{{ hostname }}" class='button'>Dummy Service</a>
 
 {% else %}
