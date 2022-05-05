@@ -28,3 +28,10 @@ class OIDCAB(OIDCAuthenticationBackend):
         # email = claims.get('email')
         username = claims.get('user_name')
         return self.UserModel.objects.create_user(username)
+
+    def filter_users_by_claims(self, claims):
+        """Return all users matching the specified username."""
+        username = claims.get('user_name')
+        if not username:
+            return self.UserModel.objects.none()
+        return self.UserModel.objects.filter(username__iexact=username)        
