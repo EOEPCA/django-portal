@@ -45,7 +45,9 @@
   <a href="https://workspace-api.{{ hostname }}/docs#" class='button'>Workspace</a>
   <a href="https://harbor.{{ hostname }}" class='button'>Container Registry</a>
   <a href="https://dummy-service.{{ hostname }}" class='button'>Dummy Service</a>
-
+  <a href="https://identity.keycloak.{{ hostname }}" class='button'>Keycloak</a>
+  <a href="https://identity.api.{{ hostname }}" class='button'>Identity API</a>
+  <a href="https://identity.dummy-service.{{ hostname }}" class='button'>Keycloak Dummy Service</a>
 {% else %}
     <a href="{% url 'oidc_authentication_init' %}" class='button'>Login</a>
 {% endif %}
