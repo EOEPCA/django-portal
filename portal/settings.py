@@ -134,8 +134,8 @@ AUTHENTICATION_BACKENDS = (
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-OIDC_RP_CLIENT_ID = os.environ.get("OIDC_RP_CLIENT_ID", 'client_id')
-OIDC_RP_CLIENT_SECRET = os.environ.get("OIDC_RP_CLIENT_SECRET",'client_secret')
+OIDC_RP_CLIENT_ID = os.environ.get("OIDC_RP_CLIENT_ID", os.environ.get("KEYCLOAK_OIDC_RP_CLIENT_ID", 'client_id'))
+OIDC_RP_CLIENT_SECRET = os.environ.get("OIDC_RP_CLIENT_SECRET", os.environ.get("KEYCLOAK_OIDC_RP_CLIENT_SECRET",'client_secret'))
 OIDC_OP_AUTHORIZATION_ENDPOINT = os.environ.get("OIDC_OP_AUTHORIZATION_ENDPOINT","https://aai.coih.org/oxauth/restv1/authorize")
 OIDC_OP_TOKEN_ENDPOINT = os.environ.get("OIDC_OP_TOKEN_ENDPOINT","https://aai.coih.org/oxauth/restv1/token")
 OIDC_OP_USER_ENDPOINT = os.environ.get("OIDC_OP_USER_ENDPOINT","https://aai.coih.org/oxauth/restv1/userinfo")
@@ -164,4 +164,4 @@ def provider_logout(request):
     redirect_url = 'https://'+ str(AUTHHOST)+ '.' + str(HOSTNAME) + '/oxauth/restv1/end_session?post_logout_redirect_uri=https://'+ str(PORTALHOST)+ '.' + str(HOSTNAME)
     return redirect_url
 
-OIDC_OP_LOGOUT_URL_METHOD='portal.settings.provider_logout'
+OIDC_OP_LOGOUT_URL_METHOD=os.environ.get('OIDC_OP_LOGOUT_URL_METHOD','portal.settings.provider_logout')
